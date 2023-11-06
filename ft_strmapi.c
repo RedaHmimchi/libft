@@ -1,58 +1,54 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 15:14:02 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 19:12:35 by rhmimchi         ###   ########.fr       */
+/*   Created: 2023/11/05 17:54:22 by rhmimchi          #+#    #+#             */
+/*   Updated: 2023/11/05 19:26:08 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*ret;
+	size_t	len;
 	size_t	i;
 
 	i = 0;
-	if (start >= ft_strlen(s)) 
-	{
-		ret = malloc(1);
-		if (ret == NULL)
-			return (NULL);
-		ret[0] = '\0';
-		return (ret);
-	}
-	if (len > ft_strlen(s) - start)
-		len = ft_strlen(s) - start;
-	ret = malloc((len + 1) * sizeof(char));
+	len = ft_strlen(s);
+	ret = malloc(len + 1);
 	if (ret == NULL)
 		return (NULL);
-	while (s[start] != '\0' && i < len)
+	while (i < len)
 	{
-		ret[i] = s[start];
+		ret[i] = f(i, s[i]);
 		i++;
-		start++;
 	}
 	ret[i] = '\0';
 	return (ret);
 }
 
 /*
-#include <stdio.h>
-
-int	 main()
-
+char	rem_x(unsigned int i, char c) 
 {
-	const char	*s;
-	char *sub;
-	unsigned int start = 0;
-	size_t len = 1844674407370956;
-	s = "hola";
-	sub = ft_substr(s,start,len);
-	printf("%s\n",sub);
-	free(sub);
+    if (c == 'x') 
+        return (c - 88); 
+    return (c);
+}
+
+#include <stdio.h>
+int main() 
+{
+    const char *original = "1337xisxaxmoroccanxschool";
+    char *result = ft_strmapi(original, rem_x);
+
+    printf("Original string: %s\n", original);
+    printf("After strmpi string: %s\n", result);
+
+    free(result);
+
 }*/

@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 20:41:30 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/04 13:35:00 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/05 23:58:05 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	*ft_memcpy(void *dst, const void *src, int n)
 	}
 	return (dst);
 }
+
 /*
 #include <stdio.h>
 int main()

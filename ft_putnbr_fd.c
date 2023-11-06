@@ -1,39 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 18:20:32 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 18:54:20 by rhmimchi         ###   ########.fr       */
+/*   Created: 2023/11/06 00:35:01 by rhmimchi          #+#    #+#             */
+/*   Updated: 2023/11/06 01:22:41 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putnbr_fd(int n, int fd)
 {
-	void	*array;
-
-	array = malloc(count * size);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, count * size);
-	return (array);
+	if (n == -2147483648)
+	{
+		write(fd, "-2147483648", 11);
+		return ;
+	}
+	else if (n >= 0 && n <= 9)
+	{
+		ft_putchar_fd(n + '0', fd);
+	}
+	else if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(n * (-1), fd);
+	}
+	else
+	{
+		ft_putnbr_fd(n / 10, fd);
+		ft_putnbr_fd(n % 10, fd);
+	}
 }
 
 /*
 #include <stdio.h>
+
 int	main()
 {
-	int *array;
-	int i = 0;
-	array = ft_calloc(10,sizeof(int));
-	while (i < 10)
-	{
-		printf("%d\n",array[i]);
-		i++;
-	}
-	free(array);
+	ft_putnbr_fd(69 , 1);
+	printf("\n");
 }*/

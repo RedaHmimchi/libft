@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/03 18:20:32 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 18:54:20 by rhmimchi         ###   ########.fr       */
+/*   Created: 2023/11/05 23:36:16 by rhmimchi          #+#    #+#             */
+/*   Updated: 2023/11/05 23:46:02 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	void	*array;
+	size_t	i;
 
-	array = malloc(count * size);
-	if (array == NULL)
-		return (NULL);
-	ft_bzero(array, count * size);
-	return (array);
+	i = 0;
+	while (i < ft_strlen(s))
+	{
+		write (fd, &s[i], 1);
+		i++;
+	}
 }
 
 /*
 #include <stdio.h>
+
 int	main()
 {
-	int *array;
-	int i = 0;
-	array = ft_calloc(10,sizeof(int));
-	while (i < 10)
-	{
-		printf("%d\n",array[i]);
-		i++;
-	}
-	free(array);
+	ft_putstr_fd("REDA",1);
+	printf("\n");
 }*/

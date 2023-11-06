@@ -1,43 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/31 23:30:12 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 19:22:55 by rhmimchi         ###   ########.fr       */
+/*   Created: 2023/11/05 19:04:55 by rhmimchi          #+#    #+#             */
+/*   Updated: 2023/11/05 19:57:42 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	char	*str;
-	int		i;
+	size_t	i;
+	size_t	len;
 
-	str = (char *)s;
 	i = 0;
-	while (n > 0)
+	len = ft_strlen(s);
+	while (i < len)
 	{
-		str[i] = 0;
-		n--;
+		f(i, &s[i]);
 		i++;
 	}
 }
+
 /*
+void capitalize(unsigned int i, char *str) 
+{
+	int j = 0;
+	while (str[j] != '\0')
+	{
+		if (str[j] >= 'a' && str[j] <= 'z')
+		{
+			str[j] = str[j] - 32;
+		}
+		j++;
+	}
+}
 #include <stdio.h>
-#include <strings.h>
-
 int main() {
-	char str1[5] = {5,2,6,8,7};
-	char str2[] = "Hello, World!";
+    char str[] = "1337 is a Moroccan Coding School";
+    printf("Original string: %s\n", str);
 
-	printf("Before bzero(): %d\n", str1[4]);
-	ft_bzero(str1, ft_strlen(str1));
-	printf("After bzero(): %d\n", str1[4]);
+    ft_striteri(str, capitalize);
 
-	return 0;
+    printf("String after ft_striteri: %s\n", str);
+
 }*/

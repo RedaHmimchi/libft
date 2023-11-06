@@ -6,21 +6,17 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:43:40 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/04 15:26:15 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/06 04:19:27 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	ft_atoi(const char *str)
+long	int	xatoi(const char *str, long int i, long int num, long int num2)
 {
-	int	i;
-	int	nega;
-	int	num;
+	long int	nega;
 
-	num = 0;
 	nega = 1;
-	i = 0;
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' || 
 		str[i] == '\r' || str[i] == '\f' || str[i] == '\v')
 		i++;
@@ -32,11 +28,28 @@ int	ft_atoi(const char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 	{
+		num2 = (num * 10);
 		num = (num * 10) + (int)(str[i] - 48);
+		if (nega > 0 && ((num2 / 10) != (num / 10)))
+			return (-1);
+		if (nega < 0 && ((num2 / 10) != (num / 10)))
+			return (0);
 		i++;
 	}
 	num *= nega;
 	return (num);
+}
+
+int	ft_atoi(const char *str)
+{
+	long int	i;
+	long int	num;
+	long int	num2;
+
+	i = 0;
+	num2 = 0;
+	num = 0;
+	return ((int)xatoi(str, i, num, num2));
 }
 
 /*
@@ -45,16 +58,16 @@ int	ft_atoi(const char *str)
 int	main()
 {
 	printf("---------------\n");
-	printf("ft_atoi :%d\n",ft_atoi("-1000043"));
-	printf("atoi    :%d\n",atoi("-1000043"));
+	printf("ft_atoi :%d\n",ft_atoi("54564545645645645645645645645645645645645644564"));
+	printf("atoi    :%d\n",atoi("54564545645645645645645645645645645645645644564"));
 	printf("---------------\n");
 	printf("---------------\n");
-	printf("ft_atoi :%d\n",ft_atoi("+000000000000000000123"));
-	printf("atoi    :%d\n",atoi("+000000000000000000123"));
+	printf("ft_atoi :%d\n",ft_atoi("   1235"));
+	printf("atoi    :%d\n",atoi("    1235"));
 	printf("---------------\n");
 	printf("---------------\n");
-	printf("ft_atoi :%d\n",ft_atoi("-+123"));
-	printf("atoi    :%d\n",atoi("-+123"));
+	printf("ft_atoi :%d\n",ft_atoi("-123"));
+	printf("atoi    :%d\n",atoi("-123"));
 	printf("---------------\n");
 	printf("---------------\n");
 	printf("ft_atoi :%d\n",ft_atoi("+-+-+---1209"));

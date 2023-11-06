@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:14:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/04 15:26:44 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/06 00:36:10 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len_s = ft_strlen(src);
 	if (dstsize == 0)
 		return (len_s);
-	while (src[i] != '\0' && (i + len_d) < (dstsize - 1))
+	while ((i + len_d) < (dstsize - 1) && src[i] != '\0')
 	{
 		dst[len_d + i] = src[i];
 		i++;

@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:48:02 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/05 01:54:42 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/05 14:43:50 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ size_t	check(char c, char const *set)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 	size_t	size;
 	size_t	j;
 	char	*trimmed;
@@ -38,7 +38,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	start = 0;
 	j = 0;
-	end = ft_strlen(s1) - 1;
+	end = (int)ft_strlen(s1) - 1;
 	while (check(s1[start], set) != 0)
 		start++;
 	while (end >= start && check(s1[end], set) != 0)
