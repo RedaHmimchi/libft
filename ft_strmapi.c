@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:54:22 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/05 19:26:08 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:58:19 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return (NULL);
 	len = ft_strlen(s);
 	ret = malloc(len + 1);
 	if (ret == NULL)

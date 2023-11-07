@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:28:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 00:32:53 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/06 19:37:16 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putendl_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
+	if (s == NULL)
+		return ;
 	while (i < ft_strlen(s))
 	{
 		write (fd, &s[i], 1);
