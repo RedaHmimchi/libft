@@ -6,13 +6,13 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 18:48:02 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/05 14:43:50 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:33:21 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	check(char c, char const *set)
+static size_t	check(char c, char const *set)
 {
 	size_t	i;
 

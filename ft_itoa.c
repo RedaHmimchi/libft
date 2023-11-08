@@ -6,13 +6,13 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:01:48 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/05 23:50:34 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:36:31 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	len_count(int n)
+static int	len_count(int n)
 {
 	int	s;
 
@@ -30,7 +30,7 @@ int	len_count(int n)
 	return (s);
 }
 
-char	*min_int(void)
+static char	*min_int(void)
 {
 	char	*ret;
 

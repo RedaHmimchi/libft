@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 19:04:55 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 01:54:42 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/07 22:56:20 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,9 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 /*
 void capitalize(unsigned int i, char *str) 
 {
-	int j = 0;
-	while (str[j] != '\0')
-	{
-		if (str[j] >= 'a' && str[j] <= 'z')
-		{
-			str[j] = str[j] - 32;
-		}
-		j++;
-	}
+	if (*str >= 'a' && *str <= 'z')
+		*str = *str - 32;
+
 }
 #include <stdio.h>
 int main() {

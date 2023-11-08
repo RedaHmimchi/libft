@@ -6,13 +6,13 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 19:43:40 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 04:19:27 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:37:17 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-long	int	xatoi(const char *str, long int i, long int num, long int num2)
+static long	int	xatoi(const char *str, long int i, long int num, long int num2)
 {
 	long int	nega;
 
@@ -58,8 +58,8 @@ int	ft_atoi(const char *str)
 int	main()
 {
 	printf("---------------\n");
-	printf("ft_atoi :%d\n",ft_atoi("54564545645645645645645645645645645645645644564"));
-	printf("atoi    :%d\n",atoi("54564545645645645645645645645645645645645644564"));
+	printf("ft_atoi :%d\n",ft_atoi("545645456456456456456456455644564"));
+	printf("atoi    :%d\n",atoi("545645456456456456456456455644564"));
 	printf("---------------\n");
 	printf("---------------\n");
 	printf("ft_atoi :%d\n",ft_atoi("   1235"));

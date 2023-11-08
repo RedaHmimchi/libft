@@ -6,13 +6,13 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 20:50:59 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 02:50:29 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/08 01:27:06 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	count_word(const char *s, char c)
+static int	count_word(const char *s, char c)
 {
 	int	count;
 	int	i;
@@ -33,7 +33,18 @@ int	count_word(const char *s, char c)
 	return (count);
 }
 
-char	**s_plit(char const *s, char c, char **ret, const char *start)
+static void	ft_free(char **ret, int i)
+{
+	i = i - 1;
+	while (i >= 0)
+	{
+		free(ret[i]);
+		i--;
+	}
+	free(ret);
+}
+
+static char	**s_plit(char const *s, char c, char **ret, const char *start)
 {
 	int	i;
 
@@ -47,7 +58,10 @@ char	**s_plit(char const *s, char c, char **ret, const char *start)
 				s++;
 			ret[i] = ft_substr(start, 0, s - start);
 			if (ret[i] == NULL)
+			{
+				ft_free(ret, i);
 				return (NULL);
+			}
 			i++;
 		}
 		else
@@ -73,12 +87,11 @@ char	**ft_split(char const *s, char c)
 }
 
 /*
-
 #include <stdio.h> 
 
 int main() 
 {
-    const char *str = "banana,tfa7a,dla7a";
+    const char *str = ",,banana,,,tfa7a,dla7a,";
     char c = ',';
 	int i = 0;
 	char **result = ft_split(str, c);

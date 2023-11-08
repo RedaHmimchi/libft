@@ -6,7 +6,7 @@
 #    By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 14:17:38 by rhmimchi          #+#    #+#              #
-#    Updated: 2023/11/07 00:51:43 by rhmimchi         ###   ########.fr        #
+#    Updated: 2023/11/08 01:07:05 by rhmimchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,18 @@ SRC =     ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 		ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
 
 OBJ = $(SRC:.c=.o)
-
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar	-rcs	$(NAME)	$(OBJ)
-    
+$(NAME):$(OBJ)
+	ar -rc $(NAME) $(OBJ)
+	
+%.o:%.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -f $(OBJ)
 
@@ -36,3 +38,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY : all fclean clean re
