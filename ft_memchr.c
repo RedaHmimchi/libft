@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 01:34:47 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/04 15:03:43 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/11 14:35:10 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,3 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	}
 	return (NULL);
 }
-/*
-#include <stdio.h>
-int	main()
-{
-	printf("before memchr() : \n");
-	char *fin = memchr("Hello World", -1976, 1);
-	printf("String after memchr() : %s\n", fin);
-
-	printf("before memchr() : \n");
-	char *fin1 = ft_memchr("Hello World", -1976, 1);
-	printf("after memchr() : %s\n", fin1);
-}*/

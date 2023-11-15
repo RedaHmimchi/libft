@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 17:54:22 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 19:58:19 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/10 22:35:16 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || f == NULL)
 		return (NULL);
 	len = ft_strlen(s);
 	ret = malloc(len + 1);
@@ -33,24 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	ret[i] = '\0';
 	return (ret);
 }
-
-/*
-char	rem_x(unsigned int i, char c) 
-{
-    if (c == 'x') 
-        return (c - 88); 
-    return (c);
-}
-
-#include <stdio.h>
-int main() 
-{
-    const char *original = "1337xisxaxmoroccanxschool";
-    char *result = ft_strmapi(original, rem_x);
-
-    printf("Original string: %s\n", original);
-    printf("After strmpi string: %s\n", result);
-
-    free(result);
-
-}*/

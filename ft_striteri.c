@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 19:04:55 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 22:56:20 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 02:17:37 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,3 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
-/*
-void capitalize(unsigned int i, char *str) 
-{
-	if (*str >= 'a' && *str <= 'z')
-		*str = *str - 32;
-
-}
-#include <stdio.h>
-int main() {
-    char str[] = "1337 is a Moroccan Coding School";
-    printf("Original string: %s\n", str);
-
-    ft_striteri(str, capitalize);
-
-    printf("String after ft_striteri: %s\n", str);
-
-}*/

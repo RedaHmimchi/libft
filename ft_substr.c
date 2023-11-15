@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 15:14:02 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 17:01:37 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 02:22:36 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	return (sub_str(ret, s, start, len));
 }
-
-/*
-#include <stdio.h>
-
-int	 main()
-
-{
-	const char	*s;
-	char *sub;
-	unsigned int start = 1;
-	size_t len = 3;
-	s = "holax";
-	sub = ft_substr(s,start,len);
-	printf("%s\n",sub);
-	free(sub);
-}*/

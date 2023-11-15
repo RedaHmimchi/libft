@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 19:03:17 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 21:07:31 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 02:17:09 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,22 +31,3 @@ char	*ft_strdup(const char *s1)
 	dup[i] = '\0';
 	return (dup);
 }
-
-/*
-#include <stdio.h>
-int main() {
-	const char *original = "Test string for duplication";
-	char *duplicate;
-
-	duplicate = ft_strdup(original);
-
-	if (duplicate == NULL) 
-		printf("memory allocation failed.\n");
-
-	printf("Original string: %s\n", original);
-	printf("Duplicated string: %s\n", duplicate);
-
-	free(duplicate);
-
-	return 0;
-}*/

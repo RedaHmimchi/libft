@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 17:23:38 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:35:32 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 02:18:01 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,17 +47,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	return (str_join(s1, s2, ret));
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	char	*s1;
-	char	*s2;
-
-	s1 = "Reda";
-	s2 = " Hmimchi";
-
-	printf("%s\n", ft_strjoin(s1,s2));
-}*/

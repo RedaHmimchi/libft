@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 15:14:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 00:36:10 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 02:18:18 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	len_s;
 
 	i = 0;
+	if ((dst == NULL || src == NULL) && dstsize == 0)
+		return (0);
 	len_d = ft_strlen(dst);
 	len_s = ft_strlen(src);
 	if (dstsize == 0)
@@ -33,27 +35,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		return (len_s + dstsize);
 	return (len_d + len_s);
 }
-
-/*
-#include <stdio.h>
-
-int main() {
-	char destination[15] = "reda ";
-	char source[] = "abcd";
-
-	size_t concatenated = strlcat(destination, source, 0);
-	printf("****************************\n");
-	
-	printf("Concatenated using strlcat: %s\n", destination);
-	printf("Total length of concatenated string: %zu\n", concatenated);
-	
-	printf("****************************\n");
-	char destination1[15] = "reda ";
-	char source1[] = "abcd";
-
-	size_t concatenated1 = ft_strlcat(destination1, source1, 0);
-
-	printf("Concatenated using ft_strlcat: %s\n", destination1);
-	printf("Total length of concatenated string: %zu\n", concatenated1);
-	printf("****************************\n");
-}*/

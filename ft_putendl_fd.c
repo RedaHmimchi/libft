@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:28:39 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 19:37:16 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 01:38:23 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putendl_fd(char *s, int fd)
 	size_t	i;
 
 	i = 0;
-	if (s == NULL)
+	if (s == NULL || fd < 0)
 		return ;
 	while (i < ft_strlen(s))
 	{
@@ -26,11 +26,3 @@ void	ft_putendl_fd(char *s, int fd)
 	}
 	write (fd, "\n", 1);
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	ft_putstr_fd("REDA",1);
-}*/

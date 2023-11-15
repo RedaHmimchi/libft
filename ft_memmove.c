@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:14:01 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/02 20:55:56 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 01:36:30 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,3 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		dest[len] = srcs[len];
 	return (dst);
 }
-
-/*
-#include <stdio.h>
-
-int main () {
-   char dest[] = "dest";
-   const char src[]  = "src to dest";
-   char dest1[] = "dest";
-   const char src1[]  = "src to dest";
-   
-   printf("---------------------------------\n");
-   memmove(dest, src, 2);
-   printf("After memmove    dest = %s, src = %s\n", dest, src);
-
-   printf("---------------------------------\n");
-   
-   ft_memmove(dest1, src1, 2);
-   printf("After ft_memmove dest = %s, src = %s\n", dest1, src);
-   printf("---------------------------------\n");
-   return(0);
-}*/

@@ -6,12 +6,11 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/31 23:30:12 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 19:22:55 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/11 17:32:51 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <strings.h>
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -27,17 +26,3 @@ void	ft_bzero(void *s, size_t n)
 		i++;
 	}
 }
-/*
-#include <stdio.h>
-#include <strings.h>
-
-int main() {
-	char str1[5] = {5,2,6,8,7};
-	char str2[] = "Hello, World!";
-
-	printf("Before bzero(): %d\n", str1[4]);
-	ft_bzero(str1, ft_strlen(str1));
-	printf("After bzero(): %d\n", str1[4]);
-
-	return 0;
-}*/

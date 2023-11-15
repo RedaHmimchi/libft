@@ -6,7 +6,7 @@
 #    By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/02 14:17:38 by rhmimchi          #+#    #+#              #
-#    Updated: 2023/11/08 01:07:05 by rhmimchi         ###   ########.fr        #
+#    Updated: 2023/11/11 15:00:18 by rhmimchi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):$(OBJ)
-	ar -rc $(NAME) $(OBJ)
-	
+	ar -rcs $(NAME) $(OBJ)
+
 %.o:%.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@
 

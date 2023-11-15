@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/05 15:01:48 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/07 15:36:31 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 01:34:34 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,3 @@ char	*ft_itoa(int n)
 		ret[0] = '-';
 	return (ret);
 }
-/*
-#include <stdio.h>
-
-int	main()
-{
-	printf("%d\n",len_count(561556151));
-	printf("%s\n",ft_itoa(561556151));
-}*/

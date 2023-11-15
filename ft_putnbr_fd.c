@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 00:35:01 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/06 01:22:41 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 01:38:41 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == -2147483648)
 	{
 		write(fd, "-2147483648", 11);
@@ -34,12 +36,3 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putnbr_fd(n % 10, fd);
 	}
 }
-
-/*
-#include <stdio.h>
-
-int	main()
-{
-	ft_putnbr_fd(69 , 1);
-	printf("\n");
-}*/

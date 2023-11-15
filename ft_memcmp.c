@@ -6,7 +6,7 @@
 /*   By: rhmimchi <rhmimchi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 12:47:53 by rhmimchi          #+#    #+#             */
-/*   Updated: 2023/11/04 13:34:41 by rhmimchi         ###   ########.fr       */
+/*   Updated: 2023/11/09 01:35:30 by rhmimchi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,23 +32,3 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	}
 	return (0);
 }
-/*
-#include <stdio.h>
-int main () {
-   char str1[] = "teste";
-   char str2[] = "testex";
-   int ret;
-
-   ret = ft_memcmp(str1, str2, 6);
-
-   if(ret > 0) {
-      printf("str2 is less than str1");
-   } else if(ret < 0) {
-      printf("str1 is less than str2");
-   } else {
-      printf("str1 is equal to str2");
-   }
-   
-   
-   return(0);
-}*/
